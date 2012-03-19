@@ -97,4 +97,16 @@ set showcmd
 "screen
 set scrolloff=3
 
+"bold characters past the 79th column
+highlight OverLength cterm=bold
+match OverLength /\%>79v.\+/
 
+"disable the arrow keys!
+inoremap  <Up>     <Esc>:echo "use k"<cr>
+inoremap  <Down>   <Esc>:echo "use j"<cr>
+inoremap  <Left>   <Esc>:echo "use h"<cr>
+inoremap  <Right>  <Esc>:echo "use l"<cr>
+noremap   <Up>     :echo "use k"<cr>
+noremap   <Down>   :echo "use j"<cr>
+noremap   <Left>   :echo "use h"<cr>
+noremap   <Right>  :echo "use l"<cr>
