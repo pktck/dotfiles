@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/taglist.vim.git'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
@@ -99,7 +100,7 @@ set scrolloff=3
 
 "bold characters past the 79th column
 highlight OverLength cterm=bold
-match OverLength /\%>79v.\+/
+autocmd BufNewFile,BufRead * match OverLength /\%>79v.\+/
 
 "disable the arrow keys!
 inoremap  <Up>     <Esc>:echo "use k"<cr>
