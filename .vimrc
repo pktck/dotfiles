@@ -49,12 +49,12 @@ set ignorecase
 set smartcase
 
 "set keybindings for tab movement
-nmap <ESC>5D :tabprevious<cr>
-nmap <ESC>5C :tabnext<cr>
-map  <ESC>5D :tabprevious<cr>
-map  <ESC>5C :tabnext<cr>
-imap <ESC>5D <ESC>:tabprevious<cr>i
-imap <ESC>5C <ESC>:tabnext<cr>i
+nmap <ESC>[5D :tabprevious<cr>
+nmap <ESC>[5C :tabnext<cr>
+map  <ESC>[5D :tabprevious<cr>
+map  <ESC>[5C :tabnext<cr>
+imap <ESC>[5D <ESC>:tabprevious<cr>i
+imap <ESC>[5C <ESC>:tabnext<cr>i
 
 "map Control-t to new tab
 map <C-t> :tabnew 
