@@ -64,9 +64,7 @@ set tabstop=4
 set shiftwidth=4
 
 "use spaces instead of tab characters for Python files
-if &filetype == "python"
-	set expandtab
-endif
+autocmd BufNewFile,BufRead *.py set expandtab
 
 "hilite tab characters
 set lcs=tab:>-
