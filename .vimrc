@@ -110,3 +110,6 @@ noremap   <Up>     :echo "use k"<cr>
 noremap   <Down>   :echo "use j"<cr>
 noremap   <Left>   :echo "use h"<cr>
 noremap   <Right>  :echo "use l"<cr>
+
+"turn off php variable highliting
+autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
