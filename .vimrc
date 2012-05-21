@@ -68,7 +68,7 @@ autocmd BufNewFile,BufRead *.py set expandtab
 
 "hilite tab characters
 set lcs=tab:>-
-set list!
+"set list!
 
 "map the space bar to toggle comments using NERD Commenter
 map <Space> \c<Space>
@@ -112,3 +112,4 @@ noremap   <Right>  :echo "use l"<cr>
 
 "turn off php variable highliting
 autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
+
