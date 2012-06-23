@@ -1,4 +1,4 @@
-alias l='ls -CFlah'
+alias l='ls -halF'
 alias vim='vim -p'
 alias p="ps axo pid,user,ucmd,cmd"
 alias grep="grep --color=always --line-number"
