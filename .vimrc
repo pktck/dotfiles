@@ -65,7 +65,8 @@ set tabstop=4
 set shiftwidth=4
 
 "use spaces instead of tab characters for Python files
-autocmd BufNewFile,BufRead *.py set expandtab
+"autocmd BufNewFile,BufRead *.py set expandtab
+set expandtab
 
 "hilite tab characters
 set lcs=tab:>-
@@ -114,3 +115,4 @@ noremap   <Right>  :echo "use l"<cr>
 "turn off php variable highliting
 autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
 
+source ~/dotfiles/google_python_style.vim
