@@ -115,4 +115,4 @@ noremap   <Right>  :echo "use l"<cr>
 "turn off php variable highliting
 autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
 
-source ~/dotfiles/google_python_style.vim
+"source ~/dotfiles/google_python_style.vim
