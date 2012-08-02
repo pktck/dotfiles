@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 "Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'juvenn/mustache.vim.git'
@@ -116,3 +117,21 @@ noremap   <Right>  :echo "use l"<cr>
 autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
 
 "source ~/dotfiles/google_python_style.vim
+
+" modify buffers on switch
+"set autowrite
+
+" don't open buffers in new window when modified buffer exists
+set hidden
+
+" load NERDTree on vim start
+autocmd vimenter * NERDTree
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" open and close NERDTree with <Tab>
+map <Tab> :NERDTreeToggle<cr>
+
+" close NERDTree when a file is opened
+autocmd bufenter * if (!(exists("b:NERDTreeType") && b:NERDTreeType == "primary")) | NERDTreeClose | endif
