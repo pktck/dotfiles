@@ -135,3 +135,6 @@ map <Tab> :NERDTreeToggle<cr>
 
 " close NERDTree when a file is opened
 autocmd bufenter * if (!(exists("b:NERDTreeType") && b:NERDTreeType == "primary")) | NERDTreeClose | endif
+
+" open NERDTree on the right
+let g:NERDTreeWinPos = "right"
