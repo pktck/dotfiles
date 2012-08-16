@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'juvenn/mustache.vim.git'
@@ -121,20 +122,22 @@ autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
 " modify buffers on switch
 "set autowrite
 
-" don't open buffers in new window when modified buffer exists
-set hidden
+"" don't open buffers in new window when modified buffer exists
+"set hidden
 
-" load NERDTree on vim start
+"" load NERDTree on vim start
 autocmd vimenter * NERDTree
+autocmd vimenter * NERDTreeClose
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " open and close NERDTree with <Tab>
-map <Tab> :NERDTreeToggle<cr>
+"map <Tab> :NERDTreeToggle<cr>
+map <Tab> :NERDTreeTabsToggle<cr>
 
 " close NERDTree when a file is opened
-autocmd bufenter * if (!(exists("b:NERDTreeType") && b:NERDTreeType == "primary")) | NERDTreeClose | endif
+"autocmd bufenter * if (!(exists("b:NERDTreeType") && b:NERDTreeType == "primary")) | NERDTreeClose | endif
 
 " open NERDTree on the right
 let g:NERDTreeWinPos = "right"
