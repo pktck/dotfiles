@@ -13,6 +13,11 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+function set_tmux_status_right {
+    #$(tmux set status-right "`parse_git_branch`")
+    $(tmux set status-right "#[fg=blue]#S #[fg=green] `parse_git_branch` #[fg=white]%H:%M %m-%d")
+}
+
 function proml {
   local        BLUE="\[\033[0;34m\]"
   local         RED="\[\033[0;31m\]"
@@ -36,7 +41,8 @@ function proml {
 #$BLUE[$RED\u@\h:\w$GREEN\$(parse_git_branch)$BLUE]\
 #$GREEN\$ "
 
-PS1="${TITLEBAR}\
+PS1="\$(set_tmux_status_right)\
+${TITLEBAR}\
 $NORLAM\u@\h:\w$GREEN \$(parse_git_branch)\
 $NORMAL\$ "
 
