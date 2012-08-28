@@ -11,4 +11,4 @@
 	interactive = auto
 	status = auto
 [branch]
-    autosetuprebase = always
+	autosetuprebase = always

@@ -21,6 +21,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'juvenn/mustache.vim.git'
+Bundle 'pangloss/vim-javascript'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
@@ -117,6 +118,9 @@ noremap   <Right>  :echo "use l"<cr>
 "turn off php variable highliting
 autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
 
+" always used the htmldjango syntax handling for .html files
+autocmd BufNewFile,BufRead *.html set ft=htmldjango
+
 "source ~/dotfiles/google_python_style.vim
 
 " modify buffers on switch
@@ -141,3 +145,17 @@ map <Tab> :NERDTreeTabsToggle<cr>
 
 " open NERDTree on the right
 let g:NERDTreeWinPos = "right"
+
+" hide *.pyc files in NERDTree
+let NERDTreeIgnore = ['\.pyc$']
+
+" color scheme for vimdiff
+highlight DiffAdd cterm=NONE ctermfg=NONE ctermbg=green
+highlight DiffDelete cterm=NONE ctermfg=NONE ctermbg=red
+highlight DiffChange cterm=NONE ctermfg=NONE ctermbg=yellow
+highlight DiffText cterm=NONE ctermfg=NONE ctermbg=magenta
+
+" changing some of the colors for pangloss/vim-javascript
+highlight javaScriptLabel cterm=NONE ctermfg=green ctermbg=NONE
+highlight javaScriptType cterm=NONE ctermfg=darkcyan ctermbg=NONE
+highlight link javaScriptThis javaScriptType

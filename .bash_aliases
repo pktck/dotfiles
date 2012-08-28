@@ -4,6 +4,7 @@ alias p="ps axo pid,user,ucmd,cmd"
 alias grep="grep --color=always --line-number"
 alias xg="xargs grep --color=always --line-number"
 alias less="less -r"
+alias c="~/scripts/vimcat"
 
 
 
