@@ -155,7 +155,18 @@ highlight DiffDelete cterm=NONE ctermfg=NONE ctermbg=red
 highlight DiffChange cterm=NONE ctermfg=NONE ctermbg=yellow
 highlight DiffText cterm=NONE ctermfg=NONE ctermbg=magenta
 
-" changing some of the colors for pangloss/vim-javascript
-highlight javaScriptLabel cterm=NONE ctermfg=green ctermbg=NONE
-highlight javaScriptType cterm=NONE ctermfg=darkcyan ctermbg=NONE
-highlight link javaScriptThis javaScriptType
+
+function b:JavaScriptSyntaxAdditions()
+    " set up some more keywords
+    syn keyword javaScriptGlobal		self window top parent
+    syn keyword javaScriptIdentifier	arguments
+
+    " changing some of the colors for pangloss/vim-javascript
+    highlight javaScriptLabel cterm=NONE ctermfg=green ctermbg=NONE
+    highlight javaScriptType cterm=NONE ctermfg=darkcyan ctermbg=NONE
+    highlight link javaScriptThis javaScriptFunction
+    highlight link javaScriptGlobal Operator
+    highlight link javaScriptIdentifier Operator
+endfunction
+
+autocmd bufenter *.js call b:JavaScriptSyntaxAdditions()

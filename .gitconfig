@@ -10,5 +10,8 @@
 	diff = auto
 	interactive = auto
 	status = auto
+    grep = auto
 [branch]
 	autosetuprebase = always
+[grep]
+    lineNumber = true
