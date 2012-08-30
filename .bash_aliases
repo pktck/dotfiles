@@ -6,7 +6,6 @@ alias grep="grep --color=always --line-number"
 alias less="less -r"
 alias c="~/scripts/vimcat"
 
-
 # show git branch in command prompt
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -18,12 +17,19 @@ function set_tmux_status_right {
     $(tmux set status-right "#[fg=blue]#S #[fg=green] $BASEDIR `parse_git_branch` #[fg=white]%H:%M %m-%d")
 }
 
-function f {
+function findgrep {
     name=$1
     query=$2
 
-    find . -name "$name" | xargs grep --color=always --line-number "$query" \| sed "s/: \+/: /g"
+    echo name:"$name"
+    echo query:$query
+
+    find . -name "$name" | xargs grep --color=always --line-number "$query"
 }
+
+# fucking globs
+reset_expansion(){ CMD="$1"; shift; $CMD "$@"; set +f; }
+alias f='set -f; reset_expansion findgrep'
 
 function proml {
     local        BLUE="\[\033[0;34m\]"
