@@ -3,6 +3,10 @@
 	email = misc@paulkastner.com
 [alias]
 	lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+
+    l = log --graph --all --format=format:'%C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(blue)— %cn%C(reset)' --abbrev-commit --date=relative
+    ll = log --graph --all --format=format:'%C(green)(%cr)%C(reset)%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(blue)— %cn%C(reset) %C(bold blue)(%h)%C(reset)' --abbrev-commit --date=relative
+
 	lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%cD%C(reset) %C(bold green)(%cr)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)' --abbrev-commit
 	lg = !"git lg1"
 [color]
