@@ -8,7 +8,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
@@ -46,12 +46,12 @@ set ignorecase
 set smartcase
 
 "set keybindings for tab movement
-nmap <ESC>[5D :tabprevious<cr>
-nmap <ESC>[5C :tabnext<cr>
-map  <ESC>[5D :tabprevious<cr>
-map  <ESC>[5C :tabnext<cr>
-imap <ESC>[5D <ESC>:tabprevious<cr>i
-imap <ESC>[5C <ESC>:tabnext<cr>i
+nmap <ESC>[D :tabprevious<cr>
+nmap <ESC>[C :tabnext<cr>
+map  <ESC>[D :tabprevious<cr>
+map  <ESC>[C :tabnext<cr>
+imap <ESC>[D <ESC>:tabprevious<cr>i
+imap <ESC>[C <ESC>:tabnext<cr>i
 
 "map Control-t to new tab
 map <C-t> :tabnew 
@@ -99,14 +99,14 @@ highlight OverLength cterm=bold
 autocmd BufNewFile,BufRead * match OverLength /\%>79v.\+/
 
 "disable the arrow keys!
-inoremap  <Up>     <Esc>:echo "use k"<cr>
-inoremap  <Down>   <Esc>:echo "use j"<cr>
-inoremap  <Left>   <Esc>:echo "use h"<cr>
-inoremap  <Right>  <Esc>:echo "use l"<cr>
-noremap   <Up>     :echo "use k"<cr>
-noremap   <Down>   :echo "use j"<cr>
-noremap   <Left>   :echo "use h"<cr>
-noremap   <Right>  :echo "use l"<cr>
+"inoremap  <Up>     <Esc>:echo "use k"<cr>
+"inoremap  <Down>   <Esc>:echo "use j"<cr>
+"inoremap  <Left>   <Esc>:echo "use h"<cr>
+"inoremap  <Right>  <Esc>:echo "use l"<cr>
+"noremap   <Up>     :echo "use k"<cr>
+"noremap   <Down>   :echo "use j"<cr>
+"noremap   <Left>   :echo "use h"<cr>
+"noremap   <Right>  :echo "use l"<cr>
 
 "turn off php variable highliting
 autocmd BufNewFile,BufRead * highlight phpIdentifier cterm=NONE ctermfg=NONE
