@@ -22,6 +22,7 @@ Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/taglist.vim.git'
 Plugin 'juvenn/mustache.vim.git'
 Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
@@ -163,3 +164,15 @@ function b:JavaScriptSyntaxAdditions()
 endfunction
 
 autocmd bufenter *.js call b:JavaScriptSyntaxAdditions()
+
+" Syntastic config options
+let g:syntastic_python_checkers = ['pylint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

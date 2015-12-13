@@ -21,3 +21,5 @@
     lineNumber = true
 [merge]
     ff = false
+[push]
+	default = simple
