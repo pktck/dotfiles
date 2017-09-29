@@ -1,2 +1,12 @@
 .vim/.netrwhist
 *.swp
+
+.vim/bundle/mustache.vim/
+.vim/bundle/nerdcommenter/
+.vim/bundle/nerdtree/
+.vim/bundle/supertab/
+.vim/bundle/syntastic/
+.vim/bundle/taglist.vim/
+.vim/bundle/vim-easymotion/
+.vim/bundle/vim-javascript/
+.vim/bundle/vim-nerdtree-tabs/
