@@ -1,6 +1,7 @@
 #!/bin/sh
 DIR=~/dotfiles
-    cd $DIR/.vim/bundle
-    git pull
-    vim -c "VundleInstall" 
+cd $DIR &&
+    git submodule init &&
+    git submodule update &&
+    vim -c "VundleInstall"
 
