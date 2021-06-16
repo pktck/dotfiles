@@ -23,6 +23,7 @@ Plugin 'vim-scripts/taglist.vim.git'
 Plugin 'juvenn/mustache.vim.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
+Plugin 'Vimjas/vim-python-pep8-indent'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
@@ -150,18 +151,18 @@ highlight DiffChange cterm=NONE ctermfg=NONE ctermbg=yellow
 highlight DiffText cterm=NONE ctermfg=NONE ctermbg=magenta
 
 
-function b:JavaScriptSyntaxAdditions()
-    " set up some more keywords
-    syn keyword javaScriptGlobal		self window top parent
-    syn keyword javaScriptIdentifier	arguments
+"function b:JavaScriptSyntaxAdditions()
+    "" set up some more keywords
+    "syn keyword javaScriptGlobal		self window top parent
+    "syn keyword javaScriptIdentifier	arguments
 
-    " changing some of the colors for pangloss/vim-javascript
-    highlight javaScriptLabel cterm=NONE ctermfg=green ctermbg=NONE
-    highlight javaScriptType cterm=NONE ctermfg=darkcyan ctermbg=NONE
-    highlight link javaScriptThis javaScriptFunction
-    highlight link javaScriptGlobal Operator
-    highlight link javaScriptIdentifier Operator
-endfunction
+    "" changing some of the colors for pangloss/vim-javascript
+    "highlight javaScriptLabel cterm=NONE ctermfg=green ctermbg=NONE
+    "highlight javaScriptType cterm=NONE ctermfg=darkcyan ctermbg=NONE
+    "highlight link javaScriptThis javaScriptFunction
+    "highlight link javaScriptGlobal Operator
+    "highlight link javaScriptIdentifier Operator
+"endfunction
 
 autocmd bufenter *.js call b:JavaScriptSyntaxAdditions()
 

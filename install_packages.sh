@@ -6,6 +6,7 @@ sudo apt-get install -y \
     ipython \
     htop \
     cron-apt \
+    ctags \
 
 
 
