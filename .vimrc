@@ -48,12 +48,12 @@ set ignorecase
 set smartcase
 
 "set keybindings for tab movement
-nmap <ESC>[D :tabprevious<cr>
-nmap <ESC>[C :tabnext<cr>
-map  <ESC>[D :tabprevious<cr>
-map  <ESC>[C :tabnext<cr>
-imap <ESC>[D <ESC>:tabprevious<cr>i
-imap <ESC>[C <ESC>:tabnext<cr>i
+nmap <c-p> :tabprevious<cr>
+nmap <c-n> :tabnext<cr>
+map  <c-p> :tabprevious<cr>
+map  <c-n> :tabnext<cr>
+imap <c-p> <ESC>:tabprevious<cr>i
+imap <c-n> <ESC>:tabnext<cr>i
 
 "map Control-t to new tab
 map <C-t> :tabnew 
@@ -164,7 +164,7 @@ highlight DiffText cterm=NONE ctermfg=NONE ctermbg=magenta
     "highlight link javaScriptIdentifier Operator
 "endfunction
 
-autocmd bufenter *.js call b:JavaScriptSyntaxAdditions()
+"autocmd bufenter *.js call b:JavaScriptSyntaxAdditions()
 
 " Syntastic config options
 let g:syntastic_python_checkers = ['pylint']
@@ -177,3 +177,26 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Displays Highlight Color Group for character under cursor
+" Press \sp to run
+nmap <leader>sp :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" make colors brighter
+set t_Co=256
+hi Normal ctermfg=white
+hi Comment ctermfg=blue
+hi Constant ctermfg=red
+hi Identifier ctermfg=cyan
+hi Statement ctermfg=yellow
+hi PreProc ctermfg=magenta
+hi Type ctermfg=green
+hi Special ctermfg=magenta
+hi Underlined ctermfg=magenta
+
