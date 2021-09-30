@@ -24,6 +24,7 @@ Plugin 'juvenn/mustache.vim.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
