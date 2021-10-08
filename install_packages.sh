@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo apt-get install -y \
     vim \
-    ctags \
+    universal-ctags \
     tmux \
     ipython \
     htop \
