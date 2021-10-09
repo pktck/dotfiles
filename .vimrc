@@ -25,6 +25,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'preservim/tagbar'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
@@ -132,9 +133,11 @@ autocmd vimenter * NERDTreeClose
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+map <Tab> :TagbarToggle<CR>
+
+
 " open and close NERDTree with <Tab>
-"map <Tab> :NERDTreeToggle<cr>
-map <Tab> :NERDTreeTabsToggle<cr>
+map <S-Tab> :NERDTreeTabsToggle<cr>
 
 " close NERDTree when a file is opened
 "autocmd bufenter * if (!(exists("b:NERDTreeType") && b:NERDTreeType == "primary")) | NERDTreeClose | endif
